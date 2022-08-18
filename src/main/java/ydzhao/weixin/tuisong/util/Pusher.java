@@ -20,7 +20,7 @@ public class Pusher {
     private static String appId = "wxb15868b1ebc0af6f";
     private static String secret = "3618641d88a596c020d69a3c0a0300df";
     //模版id
-    private static String templateId = "ofXg2uig1xIvsIo8PGUwApdt0UIdSWfFtXrm_2DQNC0";
+    private static String templateId = "8T7mjAxW8mcrSAn2mLu2EjBaetzCX1d5ilrBax4AQZc";
 
     public static void push(String openId){
         //1，配置
@@ -41,7 +41,8 @@ public class Pusher {
         //填写变量信息，比如天气之类的
         JSONObject todayWeather = Tianqi.getNanjiTianqi();
         templateMessage.addData(new WxMpTemplateData("riqi",todayWeather.getString("date") + "  "+ todayWeather.getString("week"),"#00BFFF"));
-        templateMessage.addData(new WxMpTemplateData("tianqi",todayWeather.getString("text_day"),"#00FFFF"));
+        templateMessage.addData(new WxMpTemplateData("tianqi",todayWeather.getString("text_day"),"#ff9999"));
+        templateMessage.addData(new WxMpTemplateData("night",todayWeather.getString("text_night"),"#ff66cc"));
         templateMessage.addData(new WxMpTemplateData("low",todayWeather.getString("low") + "","#173177"));
         templateMessage.addData(new WxMpTemplateData("high",todayWeather.getString("high")+ "","#FF6347" ));
         templateMessage.addData(new WxMpTemplateData("caihongpi",CaiHongPi.getCaiHongPi(),"#FF69B4"));
@@ -49,16 +50,19 @@ public class Pusher {
         templateMessage.addData(new WxMpTemplateData("shengri",JiNianRi.getShengRi()+"","#FFA500"));
         templateMessage.addData(new WxMpTemplateData("jinju",CaiHongPi.getJinJu()+"","#C71585"));
         //templateMessage.addData(new WxMpTemplateData("jiehun",JiNianRi.getJieHun()+""));
-        templateMessage.addData(new WxMpTemplateData("linzhen",JiNianRi.getLinZhen()+"","#FF6347"));
+        templateMessage.addData(new WxMpTemplateData("xiangshi",JiNianRi.getXiangshi()+"","#FF6347"));
         String beizhu = "";
-        if(JiNianRi.getJieHun() % 365 == 0){
-            beizhu = "今天是结婚纪念日！";
-        }
+//        if(JiNianRi.getJieHun() % 365 == 0){
+//            beizhu = "今天是结婚纪念日！";
+//        }
         if(JiNianRi.getLianAi() % 365 == 0){
             beizhu = "今天是恋爱纪念日！";
         }
-        if(JiNianRi.getLinZhen() % 365 == 0){
-            beizhu = "今天是结婚纪念日！";
+        if(JiNianRi.getShengRi() % 365 == 0){
+            beizhu = "今天是你的生日哦！生日快乐，我最爱的你！";
+        }
+        if(JiNianRi.getXiangshi() % 365 == 0){
+            beizhu = "今天是我们相识纪念日哦！";
         }
         templateMessage.addData(new WxMpTemplateData("beizhu",beizhu,"#FF0000"));
 

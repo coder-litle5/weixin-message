@@ -7,7 +7,7 @@
     <groupId>ydzhao</groupId>
     <artifactId>weixin.tuisong</artifactId>
     <version>1.0-SNAPSHOT</version>
-
+    <packaging>war</packaging>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -40,6 +40,7 @@
             <version>1.2.83</version>
         </dependency>
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -57,4 +58,7 @@
         </plugins>
     </build>
 
+
+
 </project>
+

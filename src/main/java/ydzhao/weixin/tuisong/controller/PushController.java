@@ -15,7 +15,8 @@ import ydzhao.weixin.tuisong.util.Pusher;
 @RestController
 public class PushController {
     //要推送的用户openid
-    private static String sx = "ohCeC6tWk76hN2K4RhNaPqZjq3LE";
+    private static String wsl = "ohCeC6tWk76hN2K4RhNaPqZjq3LE";
+    private static String rl = "ohCeC6s4RkxrYjRHAtHTeNaLzgDo";
 
 
     /**
@@ -24,7 +25,7 @@ public class PushController {
      */
     @GetMapping("/push")
     public void push() {
-        Pusher.push(sx);
+        Pusher.push(rl);
     }
 
     /**
@@ -32,7 +33,7 @@ public class PushController {
      * */
     @GetMapping("/push/zyd")
     public void pushZyd() {
-        Pusher.push(sx);
+        Pusher.push(wsl);
     }
 
 

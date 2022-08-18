@@ -18,10 +18,10 @@ import java.util.Random;
  * @Date 2022/8/2 17:26
  */
 public class CaiHongPi {
-    private static String key = "xxx";
+    private static String key = "d78e5ae9dd1393673d6cc903b16d1140";
     private static String url = "http://api.tianapi.com/caihongpi/index?key=";
     private static List<String> jinJuList = new ArrayList<>();
-    private static String name = "老婆";
+    private static String name = "亲爱的阮老师";
 
     public static String getCaiHongPi() {
         //默认彩虹屁
