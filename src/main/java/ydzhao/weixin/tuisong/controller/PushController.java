@@ -26,7 +26,7 @@ public class PushController {
      */
     @GetMapping("/push")
     public void push() {
-        Pusher.push(wsl);
+        Pusher.push(rl);
     }
 
     /**
@@ -34,9 +34,22 @@ public class PushController {
      * */
     @GetMapping("/push/zyd")
     public void pushZyd() {
-        Pusher.push(wsl);
+        Pusher.push(rl);
     }
 
+
+//    @GetMapping("/push")
+//    public void push() {
+//        Pusher.push(wsl);
+//    }
+//
+//    /**
+//     * 微信测试账号推送
+//     * */
+//    @GetMapping("/push/zyd")
+//    public void pushZyd() {
+//        Pusher.push(wsl);
+//    }
 
     /**
      * 微信测试账号推送

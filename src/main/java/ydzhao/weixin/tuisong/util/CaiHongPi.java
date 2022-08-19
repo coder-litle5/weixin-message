@@ -3,10 +3,8 @@ package ydzhao.weixin.tuisong.util;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.commons.lang3.StringUtils;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -24,7 +22,7 @@ public class CaiHongPi {
     private static String url = "http://api.tianapi.com/caihongpi/index?key=";
 
     private static List<String> jinJuList = new ArrayList<>();
-    private static String name = "亲爱的阮老师";
+    private static String name = "阮老师";
 
     public static String getCaiHongPi() {
         //默认彩虹屁
@@ -43,9 +41,27 @@ public class CaiHongPi {
     /**
      * 载入金句库
      */
+//    static {
+//        InputStream inputStream = CaiHongPi.class.getClassLoader().getResourceAsStream("jinju.txt");
+//        try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("G:\\idea-projects\\weixin-message\\src\\main\\resources\\jinju.txt"),"UTF-8"))) {
+//            String str = "";
+//            String temp = "";
+//            while ((temp = br.readLine()) != null) {
+//                if (!StringUtils.isEmpty(temp)) {
+//                    str = str + "\r\n" + temp;
+//                } else {
+//                    jinJuList.add(str);
+//                    str = "";
+//                }
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
+
     static {
         InputStream inputStream = CaiHongPi.class.getClassLoader().getResourceAsStream("jinju.txt");
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("E:\\Tomcat 8.5_wexinpush\\webapps\\ROOT\\WEB-INF\\classes\\jinju.txt"),"UTF-8"))) {
             String str = "";
             String temp = "";
             while ((temp = br.readLine()) != null) {

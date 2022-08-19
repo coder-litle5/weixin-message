@@ -14,13 +14,20 @@ import ydzhao.weixin.tuisong.util.Pusher;
 @Component
 public class JobWorker {
     //要推送的用户openid
-    private static String openId = ParamUtil.wsl;
-    private static String openIdrl=ParamUtil.rl;
+//    private static String openId = ParamUtil.wsl;
+    private static String openId=ParamUtil.rl;
 
-    @Scheduled(cron = "00 0/2 * * * ?")
+    //测试用，1分钟一次
+//    @Scheduled(cron = "00 0/1 * * * ?")
+//    public void goodMorning(){
+//        Pusher.push(openId);
+//    }
+
+    //早上7点半发送
+    @Scheduled(cron = "0 30 7 * * ?")
     public void goodMorning(){
         Pusher.push(openId);
-        Pusher.push(openId);
     }
+
 
 }

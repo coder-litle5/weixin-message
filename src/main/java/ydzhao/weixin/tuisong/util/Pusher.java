@@ -7,6 +7,10 @@ import me.chanjar.weixin.mp.api.impl.WxMpServiceImpl;
 import me.chanjar.weixin.mp.bean.template.WxMpTemplateData;
 import me.chanjar.weixin.mp.bean.template.WxMpTemplateMessage;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  *@ClassName Pusher
  *@Description TODO
@@ -20,7 +24,9 @@ public class Pusher {
     private static String appId=ParamUtil.appId;
     private static String secret = ParamUtil.secret;
     //模版id
-    private static String templateId =ParamUtil.templateId;
+    private static String templateId =ParamUtil.am_templateId;
+
+
 
     public static void push(String openId){
         //1，配置
@@ -41,6 +47,7 @@ public class Pusher {
         //填写变量信息，比如天气之类的
         JSONObject todayWeather = Tianqi.getNanjiTianqi();
         templateMessage.addData(new WxMpTemplateData("riqi",todayWeather.getString("date") + "  "+ todayWeather.getString("week"),"#00BFFF"));
+        templateMessage.addData(new WxMpTemplateData("aixin", "刚起床的林哥送你一颗♥+1，要每天开心哦，已获得"+DataCalc.daysBetween()+"颗爱心啦，达到30颗爱心可换大餐一顿哦\n（＾∀＾●）","#ff0000"));
         templateMessage.addData(new WxMpTemplateData("tianqi",todayWeather.getString("text_day"),"#ff9999"));
         templateMessage.addData(new WxMpTemplateData("night",todayWeather.getString("text_night"),"#ff66cc"));
         templateMessage.addData(new WxMpTemplateData("low",todayWeather.getString("low") + "","#173177"));

@@ -1,7 +1,8 @@
 {{riqi.DATA}}
+{{aixin.DATA}}
 {{beizhu.DATA}}
 今天白天天气：{{tianqi.DATA}}
-今天晚上天气: {{night.DATA}}
+今天晚上天气：{{night.DATA}}
 今天最低温度：{{low.DATA}} 度
 今天最高温度：{{high.DATA}} 度
 我们已经认识 {{xiangshi.DATA}} 天
