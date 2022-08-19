@@ -29,6 +29,7 @@ public class DataCalc {
             bdate = sdf.parse(sdf.format(bdate));
             Calendar cal = Calendar.getInstance();
             cal.setTime(smdate);
+
             long time1 = cal.getTimeInMillis();
             cal.setTime(bdate);
             long time2 = cal.getTimeInMillis();
