@@ -16,10 +16,6 @@
 
 6.每日金句api或者自己写个金句库
 
-具体教程可以查看博客
-
-http://t.csdn.cn/gzC6Z
-
 需要修改源码的地方
 测试公众号的id和密钥
 ![image](https://user-images.githubusercontent.com/42952460/182985351-92f81810-59d0-44a9-8289-058a4b329e11.png)

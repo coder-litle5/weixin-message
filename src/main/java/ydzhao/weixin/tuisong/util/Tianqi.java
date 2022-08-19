@@ -7,16 +7,16 @@ import com.alibaba.fastjson.JSONObject;
 /**
  * @ClassName Tianqi
  * @Description TODO
- * @Author ydzhao
+ * @Author wsl
  * @Date 2022/8/2 16:45
  */
 public class Tianqi {
 
     //百度开发者申请的ak
-    private static String ak = "Qv7bgoVk8DbR02lTL79kmxpt4FPY2sRI";
+    private static String ak =ParamUtil.ak;
 
     //地区编码 https://lbsyun.baidu.com/index.php?title=webapi/weather
-    private static String district_id = "510100";
+    private static String district_id =ParamUtil.district_id;
 
     public static JSONObject getNanjiTianqi() {
         String result = null;

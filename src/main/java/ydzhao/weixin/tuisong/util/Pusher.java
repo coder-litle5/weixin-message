@@ -10,17 +10,17 @@ import me.chanjar.weixin.mp.bean.template.WxMpTemplateMessage;
 /**
  *@ClassName Pusher
  *@Description TODO
- *@Author ydzhao
+ *@Author wsl
  *@Date 2022/8/2 16:03
  */
 public class Pusher {
     /**
      * 测试号的appId和secret
      */
-    private static String appId = "wxb15868b1ebc0af6f";
-    private static String secret = "3618641d88a596c020d69a3c0a0300df";
+    private static String appId=ParamUtil.appId;
+    private static String secret = ParamUtil.secret;
     //模版id
-    private static String templateId = "8T7mjAxW8mcrSAn2mLu2EjBaetzCX1d5ilrBax4AQZc";
+    private static String templateId =ParamUtil.templateId;
 
     public static void push(String openId){
         //1，配置
